@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xylophone</title>
+    <link rel="stylesheet" href="..//css/all.min.css">
+    <link rel="stylesheet" href="../css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<style>
+    body{
+        background:repeating-linear-gradient(-45deg,#CED346,#F4EFE2,#C7463C,#463833,#749F55) ;
+        height: auto;
+        color: white;
+        background-size: 200% 200%;
+        animation: backg 10s ease infinite;
+    }
+    @keyframes backg {
+        0%{background-position: 0% 50%;}
+        50%{background-position: 100% 50%;}
+        100%{background-position: 0% 50%;}
+    }
+    #title{
+        position: relative;
+        animation-name: title;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+    }
+    @keyframes title {
+        0%{top:-200px;}
+        100%{top:0px;}
+    }
+    #dis{
+        position: relative;
+        animation-name: description;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes description {
+        0%{left:-1000px;}
+        100%{left:0px;}
+    }
+    #image-x{
+        opacity: 0;
+        animation-name: image-x;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes image-x {
+        0%{opacity: 0;}
+        25%{opacity: 0.25;}
+        50%{opacity: 0.50;}
+        75%{opacity: 0.75;}
+        100%{opacity: 1;}
+    }
+    .rounded{
+        border-radius: 60px!important;
+    }
+    .img-fluid{
+        height: 80vh;
+    }
+    #dis{
+        font-size:large !important;
+        letter-spacing: 5px !important;
+    }
+    pre{
+        max-width: 70vw!important;
+        color: white!important;
+        margin: 20px!important;
+        font-size: 15px!important;
+    }
+    #home{
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    #code{
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    a{
+        color: white;
+    }
+    a:active{
+        color: red;
+    }
+    a:hover{
+        color: #00FF5B;
+    }
+    #line{
+        border: 1px solid white!important;
+    }
+    i{
+        border: 1px solid white;
+        border-radius: 50%;
+        color: white;
+        background-color: transparent;
+        padding: 10px;
+        transition-property: all;
+        transition-duration: 1s;
+    }
+    i:hover{
+        background-color: white;
+        color: black;
+    }
+    .footer{
+        background: rgba(0, 0, 0, 0.9);
+        margin: 0!important;
+    }
+</style>
+<body class="container-fluid">
+    <div id="title" class="display-4 text-white text-center my-1">Xylophone</div>
+    <div class="row align-items-center" id="home">
+        <div id="dis" class="d-flex justify-content-center text-white text-center col-lg p-5">
+            Basic Flutter Application which is a simulation of Music Instrument called Xylophone.
+            Xylophone is a muisc instrument which produce different notes when a certain bar is tapped.
+        </div>
+        <div class="d-flex justify-content-center col-lg my-5">
+            <img id="image-x" src="./Xylophone-p.png" class="rounded img-fluid">
+        </div>
+    </div>
+    <div id="title-2" class="display-3 text-white m-3">
+        Code
+    </div>
+    <div class="row m-3" id="code">
+        <code>
+            <pre class="overflow-auto">
+import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
+
+void main() => runApp(
+      MaterialApp(
+        home: Page(),
+      ),
+    );
+
+class Page extends StatefulWidget {
+  @override
+  _PageState createState() => _PageState();
+}
+
+class _PageState extends State<Page> {
+  final player = AudioCache();
+  Expanded buildExpanded(MaterialColor c, int i) {
+    return Expanded(
+      child: FlatButton(
+        color: c,
+        oncodessed: () {
+          player.play('note$i.wav');
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        buildExpanded(Colors.red, 1),
+        buildExpanded(Colors.orange, 2),
+        buildExpanded(Colors.yellow, 3),
+        buildExpanded(Colors.green, 4),
+        buildExpanded(Colors.blue, 5),
+        buildExpanded(Colors.purple, 6),
+      ],
+    );
+  }
+}
+</pre>
+        </code>
+    </div>
+    <div class="font-weight-light text-white m-3" style="font-size: 30px;">
+        Packages Used to Play Audio Notes
+    </div>
+
+    <div class="row m-3">
+        <h5 class="d-inline pr-3">AudioPlayers : </h6>
+        <a href="https://pub.dev/packages/audioplayers pt-3">https://pub.dev/packages/audioplayers</a>
+    </div>
+        
+    <footer class="footer py-3">
+        <div class="row justify-content-center pb-1">
+            <a href="https://in.linkedin.com/in/purna-mahesh-immandi-a53aa1159"><div class="col"><i class="fab fa-linkedin-in"></i></div></a>
+            <a href="https://purnamahesh.blogspot.com/"><div class="col"><i class="fab fa-blogger-b"></i></div></a>
+            <a href="https://www.facebook.com/purnamaheshi"><div class="col"><i class="fab fa-facebook-f"></i></div></a>
+            <a href="https://www.instagram.com/_purna_mahesh/"><div class="col"><i class="fab fa-instagram"></i></div></a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="d-inline">Mobile: </div>
+            <div class="pl-2">+91 9966506538</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="d-inline">Email: </div>
+            <div class="pl-2">poorna.sd9@gmail.com</div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- 
+<a href="https://www.facebook.com/purnamaheshi"><div class="col"><i class="fa fa-facebook-f"></i></div></a>
+<a href="https://in.linkedin.com/in/purna-mahesh-immandi-a53aa1159"><div class="col"><i class="fa fa-linkedin" aria-hidden="true"></i></div></a>
+<a href="https://www.instagram.com/_purna_mahesh/"><div class="col"><i class="fa fa-instagram"></i></div></a> -->
