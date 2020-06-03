@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for Registering</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 id="tnx" class="font-weight-light">Thank you for Registering</h1>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<style>
+    body{
+        text-align: center;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(30deg,#0C4E8C,#0C81E4,#11C4D4,#4FE7AF,#CCF1CD);
+        background-size: 400% 400%;
+        animation: gradientBG 10s ease infinite; 
+    }
+    @keyframes gradientBG {
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+            background-position: 0% 50%;
+        }
+    }
+    #tnx{
+        animation-name: tnx;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+    }
+    @keyframes tnx {
+        0%{font-size: 5px;}
+        100%{font-size: 40px;}
+    }
+</style>

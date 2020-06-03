@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function register() {
+            window.location = "thankyou.html";
+        }
+    </script>
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container my-3">
+        <div class="row align-items-center">
+            <div class="container-fluid col-xl-6">
+                <div class="row m-0">
+                    <marquee scrolldelay = "200" direction="right" behaviour="alternate" class="col inline-block display-4" id="title">Goal</marquee>
+                    <marquee scrolldelay = "100" behaviour="alternate" class="col inline-block display-4 text-center" id="title">Carrer</marquee>
+                </div>
+                <marquee  scrolldelay = "150" behaviour="alternate" class="row m-0 display-1 text-center m-4" id="title">Passion</marquee>
+                <div class="row m-0">
+                    <marquee behaviour="alternate" class="col inline-block text-center" id="title">Inspiration</marquee>
+                    <marquee direction="right" behaviour="alternate" class="col inline-block text-center" id="title">Practice</marquee>
+                </div>
+                <div class="row m-0">
+                    <marquee direction="right" behaviour="alternate" class="col inline-block text-center" id="title"><h1>Smart</h1></marquee>
+                    <marquee behaviour="alternate" class="col inline-block text-center display-2" id="title">Strength</marquee>
+                </div>
+                <div class="row m-0">
+                    <marquee  scrolldelay = "100" direction="right" behaviour="alternate" class="col inline-block text-center display-3" id="title">Hard Work</marquee>
+                </div>
+            </div>
+            <form class="form-group col-xl-6">
+                <h1 class="text-center">Register</h1>
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Enter Name" name="name">
+                <label>Father's Name</label>
+                <input type="text" class="form-control" placeholder="Enter Father Name" name="father">
+                <label>Gender</label>
+                <select name="gender" class="form-control">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Others</option>
+                </select>
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="example@email.com">
+                <label>Date of Birth</label>
+                <input type="date" name="dob" class="form-control">
+                <label>Phone</label>
+                <input type="number" name="phone" class="form-control" pattern="[6-9]{1}[0-9]{9}">
+                <label>Address</label>
+                <textarea name="address" class="form-control"></textarea>
+                <div class="form-row">
+                    <div class="col">
+                        <label>10th CGPA</label>
+                        <input type="text" name="ten" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Inter CGPA</label>
+                        <input type="text" name="plus2" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Btech CGPA</label>
+                        <input type="text" name="btech" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <label>Create Password</label>
+                        <input type="password" name="pwd" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Re-Enter Password</label>
+                        <input type="password" name="cpwd" class="form-control">
+                    </div>
+                </div>
+                <label>Upload Resume</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input">
+                    <label class="custom-file-label" name="resume">Choose file</label>
+                </div>
+                <div class="row m-2">
+                    <input type="checkbox" name="accept" class="col-1 m-1">
+                    <small class="col-10">On Registration you will accept our cookies and terms and conditions</small>
+                </div>
+                <input type="button" class="btn btn-primary form-control" onclick="register()" value="REGISTER FOR FREE">
+            </form>
+        </div> 
+    </div>
+</body>
+</html>
