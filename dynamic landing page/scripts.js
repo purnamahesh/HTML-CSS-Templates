@@ -26,7 +26,7 @@ function setBgGreet(h){
         document.body.style.backgroundImage = 'url(./images/morning.jpg)';
         document.body.style.color = "white";
     }
-    else if(hour<18){
+    else if(h<18){
         greeting.innerHTML = "Good Afternoon";
         document.body.style.backgroundImage = 'url(./images/afternoon.jpg)';
     }
